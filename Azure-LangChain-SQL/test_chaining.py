@@ -26,10 +26,6 @@ SQL Result: {result}
 Answer: """
 )
 
-os.environ["OPENAI_API_TYPE"] = "azure"  
-os.environ["OPENAI_API_KEY"] = "b10b7b55f3fb49e5917ce25931122bf5"
-os.environ["OPENAI_API_BASE"] = "https://sql-qna-azureopenai.openai.azure.com/"  
-os.environ["OPENAI_API_VERSION"] = "2023-03-15-preview" 
 llm = AzureChatOpenAI(deployment_name="gpt-35-turbo", temperature=0, max_tokens=4000)  
 
 db = SQLDatabase.from_uri("sqlite:///Chinook.db")
